@@ -126,7 +126,7 @@ static bool multiUserAuthorized(std::string strUserPass)
 static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUsernameOut)
 {
     //A2024
-    printf("\n\n# %s\n\n", strRPCUserColonPass.c_str());
+    printf("\n# strRPCUserColonPass %s\n", strRPCUserColonPass.c_str());
     //
     if (strRPCUserColonPass.empty()) // Belt-and-suspenders measure if InitRPCAuthentication was not called
         return false;
@@ -140,6 +140,10 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
 
     if (strUserPass.find(':') != std::string::npos)
         strAuthUsernameOut = strUserPass.substr(0, strUserPass.find(':'));
+
+    //A2024
+    printf("\n# strUserPass %s\n", strUserPass.c_str());
+    printf("\n# strAuthUsernameOut %s\n", strAuthUsernameOut.c_str());
 
     //Check if authorized under single-user field
     if (TimingResistantEqual(strUserPass, strRPCUserColonPass)) {
@@ -164,7 +168,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
     }
 
     //a2024
-    printf("\n\n#\n%s\n\n\n", authHeader.second.c_str());
+    printf("\n# authHeader %s\n", authHeader.second.c_str());
 
     JSONRPCRequest jreq;
     jreq.context = context;
