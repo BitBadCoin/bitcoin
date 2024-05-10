@@ -154,7 +154,7 @@ void hello(HTTPRequest* req) {
 
     std::pair<bool, std::string> authHeader = req->GetHeader("authorization");
 
-    printf("%s, %s", authHeader.first ? "true" : "false", authHeader.second.c_str());
+    printf("%s, %s\n", authHeader.first ? "true" : "false", authHeader.second.c_str());
 
 }
 //
