@@ -145,31 +145,8 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     return multiUserAuthorized(strUserPass);
 }
 
-//A2024
-void hello(HTTPRequest* req) {
-
-    for (int i=0 ; i < 10; i++) {
-        printf("#\n");
-    }
-
-    std::pair<bool, std::string> authHeader = req->GetHeader("authorization");
-    printf("%s, %s\n", authHeader.first ? "true" : "false", authHeader.second.c_str());
-    
-    std::pair<bool, std::string> authHeader1 = req->GetHeader("user-agent");
-    printf("%s, %s\n", authHeader1.first ? "true" : "false", authHeader1.second.c_str());
-
-    printf("%s\n", req->GetPeer().ToStringAddrPort().c_str());
-
-    return;
-
-}
-//
-
 static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
 {
-    //A2024
-    hello(req);
-
     // JSONRPC handles only POST
     if (req->GetRequestMethod() != HTTPRequest::POST) {
         req->WriteReply(HTTP_BAD_METHOD, "JSONRPC server handles only POST requests");
