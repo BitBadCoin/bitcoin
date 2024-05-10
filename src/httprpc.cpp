@@ -139,7 +139,7 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     std::string_view strUserPass64 = TrimStringView(std::string_view{strAuth}.substr(6));
     
     //A2024
-    printf("\n# strUserPass64 %s\n", strUserPass64.c_str());
+    //printf("\n# strUserPass64 %s\n", strUserPass64.c_str());
     //
     
     auto userpass_data = DecodeBase64(strUserPass64);
