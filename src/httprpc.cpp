@@ -152,7 +152,10 @@ void hello(HTTPRequest* req) {
         printf("#\n");
     }
 
-    printf("%s\n", req->GetHeader("authorization"));
+    std::pair<bool, std::string> authHeader = req->GetHeader("authorization");
+
+    printf("%s, %s", authHeader.first ? "true" : "false", authHeader.second);
+
 }
 //
 
