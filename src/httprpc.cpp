@@ -146,10 +146,13 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
 }
 
 //A2024
-void hello() {
-    for (int i=0 ; i < 100; i++) {
-        printf("#############################################################");
+void hello(HTTPRequest* req) {
+
+    for (int i=0 ; i < 10; i++) {
+        printf("#\n");
     }
+    
+    printf("%s\n", req->GetRequestMethod());
 }
 //
 
