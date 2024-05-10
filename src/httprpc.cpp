@@ -151,8 +151,8 @@ void hello(HTTPRequest* req) {
     for (int i=0 ; i < 10; i++) {
         printf("#\n");
     }
-    
-    printf("%s\n", req->GetRequestMethod());
+
+    printf("%i\n", req->GetRequestMethod());
 }
 //
 
