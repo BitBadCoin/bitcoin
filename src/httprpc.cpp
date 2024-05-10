@@ -131,11 +131,12 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
         return false;
     
     //A2024
-    printf("\n# strUserPass64 %s\n", strAuth.substr(0, 6).c_str());
+    printf("\n# strUserPass64 %s\n", strAuth.substr(0, 6) == "Basic " ? "YES" : "NO");
     //
     
     if (strAuth.substr(0, 6) != "Basic ")
         return false;
+
     std::string_view strUserPass64 = TrimStringView(std::string_view{strAuth}.substr(6));
     
     //A2024
