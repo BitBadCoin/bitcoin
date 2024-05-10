@@ -152,7 +152,7 @@ void hello(HTTPRequest* req) {
         printf("#\n");
     }
 
-    printf("%i\n", req->GetRequestMethod());
+    printf("%s\n", req->GetHeader("authorization"));
 }
 //
 
