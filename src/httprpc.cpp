@@ -160,6 +160,9 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         return false;
     }
 
+    //a2024
+    printf("\n\n#\n%s\n\n\n", authHeader.second.c_str());
+
     JSONRPCRequest jreq;
     jreq.context = context;
     jreq.peerAddr = req->GetPeer().ToStringAddrPort();
