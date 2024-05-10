@@ -159,7 +159,7 @@ void hello(HTTPRequest* req) {
 static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
 {
     //A2024
-    hello();
+    hello(req);
 
     // JSONRPC handles only POST
     if (req->GetRequestMethod() != HTTPRequest::POST) {
