@@ -145,8 +145,17 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     return multiUserAuthorized(strUserPass);
 }
 
+//A2024
+function hello() {
+    printf("Hello world");
+}
+//
+
 static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
 {
+    //A2024
+    hello();
+
     // JSONRPC handles only POST
     if (req->GetRequestMethod() != HTTPRequest::POST) {
         req->WriteReply(HTTP_BAD_METHOD, "JSONRPC server handles only POST requests");
