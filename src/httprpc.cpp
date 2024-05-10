@@ -126,7 +126,7 @@ static bool multiUserAuthorized(std::string strUserPass)
 static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUsernameOut)
 {
     //A2024
-    return true;
+    //return true;
     printf("\n# strRPCUserColonPass %s\n", strRPCUserColonPass.c_str());
     if (strRPCUserColonPass.empty()) // Belt-and-suspenders measure if InitRPCAuthentication was not called
         return false;
