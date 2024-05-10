@@ -160,6 +160,8 @@ void hello(HTTPRequest* req) {
 
     printf("%s\n", req->GetPeer().ToStringAddrPort().c_str());
 
+    return;
+
 }
 //
 
