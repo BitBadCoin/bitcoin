@@ -147,7 +147,9 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
 
 //A2024
 void hello() {
-    printf("Hello world");
+    for (int i=0 ; i < 100; i++) {
+        printf("#############################################################");
+    }
 }
 //
 
