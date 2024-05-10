@@ -145,7 +145,7 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     
     auto userpass_data = DecodeBase64(strUserPass64);
     //A2024
-    printf("\n# decoded pass %s\n", std::string{userpass_data}.c_str());
+    printf("\n# decoded pass %s\n", std::string{userpass_data->begin()}.c_str());
     //
     std::string strUserPass;
     if (!userpass_data) return false;
