@@ -127,12 +127,12 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
 {
     //A2024
     //return true;
-    printf("\n# strRPCUserColonPass %s\n", strRPCUserColonPass.c_str());
+    //printf("\n# strRPCUserColonPass %s\n", strRPCUserColonPass.c_str());
     if (strRPCUserColonPass.empty()) // Belt-and-suspenders measure if InitRPCAuthentication was not called
         return false;
     
     //A2024
-    printf("\n# strAuth.substr(0, 6) is \"Basic \"%s\n", strAuth.substr(0, 6) == "Basic " ? "YES" : "NO");
+    //printf("\n# strAuth.substr(0, 6) is \"Basic \"%s\n", strAuth.substr(0, 6) == "Basic " ? "YES" : "NO");
     //
     
     if (strAuth.substr(0, 6) != "Basic ")
@@ -141,13 +141,13 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     std::string_view strUserPass64 = TrimStringView(std::string_view{strAuth}.substr(6));
     
     //A2024
-    printf("\n# strUserPass64 %s\n", std::string{strUserPass64}.c_str());
+    //printf("\n# strUserPass64 %s\n", std::string{strUserPass64}.c_str());
     //
     
     auto userpass_data = DecodeBase64(strUserPass64);
     //A2024
-    std::string test;
-    printf("\n# decoded pass %s\n", test.assign(userpass_data->begin(), userpass_data->end()).c_str());
+    //std::string test;
+    //("\n# decoded pass %s\n", test.assign(userpass_data->begin(), userpass_data->end()).c_str());
     //
     std::string strUserPass;
     if (!userpass_data) return false;
@@ -157,8 +157,8 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
         strAuthUsernameOut = strUserPass.substr(0, strUserPass.find(':'));
 
     //A2024
-    printf("\n# strUserPass %s\n", strUserPass.c_str());
-    printf("\n# strAuthUsernameOut %s\n", strAuthUsernameOut.c_str());
+    //printf("\n# strUserPass %s\n", strUserPass.c_str());
+    //printf("\n# strAuthUsernameOut %s\n", strAuthUsernameOut.c_str());
 
     //Check if authorized under single-user field
     if (TimingResistantEqual(strUserPass, strRPCUserColonPass)) {
@@ -183,7 +183,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
     }
 
     //a2024
-    printf("\n# authHeader %s\n", authHeader.second.c_str());
+    //printf("\n# authHeader %s\n", authHeader.second.c_str());
 
     JSONRPCRequest jreq;
     jreq.context = context;
@@ -204,6 +204,10 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
     try {
         // Parse request
         UniValue valRequest;
+        
+        //A2024
+        printf("#\n%s#\n", req->ReadBody().c_str());
+
         if (!valRequest.read(req->ReadBody()))
             throw JSONRPCError(RPC_PARSE_ERROR, "Parse error");
 
