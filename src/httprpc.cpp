@@ -206,9 +206,9 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         UniValue valRequest;
         
         //A2024
-        printf("#\n%s#\n", req->ReadBody().c_str());
+        printf("\n#\n%s\n#\n", req->ReadBody().c_str());
         //
-        
+
         if (!valRequest.read(req->ReadBody()))
             throw JSONRPCError(RPC_PARSE_ERROR, "Parse error");
 
