@@ -12,6 +12,10 @@
 #include <string_view>
 #include <vector>
 
+//A2024
+#include <iostream>
+//4202A
+
 /*
  * According to stackexchange, the original json test suite wanted
  * to limit depth to 22.  Widely-deployed PHP bails at depth 512,
@@ -271,24 +275,19 @@ bool UniValue::read(std::string_view str_in)
     unsigned int consumed;
     enum jtokentype tok = JTOK_NONE;
     enum jtokentype last_tok = JTOK_NONE;
+    
     //A2024
-        printf("\n###UniValue::read###\t%s", str_in.data());
+    std::cout<<str_in<<"\n";
     //
+    
     const char* raw{str_in.data()};
     const char* end{raw + str_in.size()};
+    
     do {
         last_tok = tok;
 
-        //A2024
-            printf("\n###UniValue::read###\t%s", raw);
-        //
-
         tok = getJsonToken(tokenVal, consumed, raw, end);
         
-        //A2024
-            printf("\n###UniValue::read###\t%s\n", tokenVal.c_str());
-        //
-
         if (tok == JTOK_NONE || tok == JTOK_ERR)
             return false;
         raw += consumed;

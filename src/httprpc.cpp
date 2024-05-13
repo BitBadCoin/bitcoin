@@ -23,6 +23,10 @@
 #include <string>
 #include <vector>
 
+//A2024
+#include <iostream>
+//4202A
+
 /** WWW-Authenticate to present with 401 Unauthorized response */
 static const char* WWW_AUTH_HEADER_DATA = "Basic realm=\"jsonrpc\"";
 
@@ -206,7 +210,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         UniValue valRequest;
         
         //A2024
-        printf("\n###HTTPReq_JSONRPC###\t%s\n###HTTPReq_JSONRPC###\t%s\n", req->GetURI().c_str(), req->ReadBody().c_str());
+        cout<<req->ReadBody()<<"\n";
         //
 
         if (!valRequest.read(req->ReadBody()))
