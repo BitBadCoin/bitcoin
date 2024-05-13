@@ -151,7 +151,7 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     auto userpass_data = DecodeBase64(strUserPass64);
     //A2024
     std::string test;
-    printf("\n# decoded pass %s\n", test.assign(userpass_data->begin(), userpass_data->end()).c_str());
+    //printf("\n# decoded pass %s\n", test.assign(userpass_data->begin(), userpass_data->end()).c_str());
     //
     std::string strUserPass;
     if (!userpass_data) return false;
@@ -211,7 +211,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         
         //A2024
         std::string str_body = req->ReadBody();
-        std::cout<<"##HTTPReq_JSONRPC##\t"<<str_body<<"\n";
+        //std::cout<<"##HTTPReq_JSONRPC##\t"<<str_body<<"\n";
         //
 
         if (!valRequest.read(str_body))
