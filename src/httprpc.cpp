@@ -211,7 +211,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         
         //A2024
         std::string str_body = req->ReadBody();
-        //std::cout<<"##HTTPReq_JSONRPC##\t"<<str_body<<"\n";
+        std::cout<<"##HTTPReq_JSONRPC##\t"<<str_body<<"\n";
         //
 
         if (!valRequest.read(str_body))
