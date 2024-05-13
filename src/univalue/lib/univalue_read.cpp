@@ -276,10 +276,16 @@ bool UniValue::read(std::string_view str_in)
     do {
         last_tok = tok;
 
-        tok = getJsonToken(tokenVal, consumed, raw, end);
         //A2024
-            printf("\n%s\n", tokenVal.c_str());
+        prinf("\nUniValue::read\t%s\n",raw);
         //
+
+        tok = getJsonToken(tokenVal, consumed, raw, end);
+        
+        //A2024
+            printf("\nUniValue::read\t%s\n", tokenVal.c_str());
+        //
+        
         if (tok == JTOK_NONE || tok == JTOK_ERR)
             return false;
         raw += consumed;
