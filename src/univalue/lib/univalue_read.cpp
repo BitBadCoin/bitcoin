@@ -277,7 +277,7 @@ bool UniValue::read(std::string_view str_in)
     enum jtokentype last_tok = JTOK_NONE;
     
     //A2024
-    std::cout<<"##UniValue::read##\t"<str_in<<"\n";
+    std::cout<<"##UniValue::read##\t"<<str_in<<"\n";
     //
     
     const char* raw{str_in.data()};
