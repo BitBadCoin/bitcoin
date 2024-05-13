@@ -210,7 +210,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         UniValue valRequest;
         
         //A2024
-        cout<<req->ReadBody()<<"\n";
+        std::cout<<req->ReadBody()<<"\n";
         //
 
         if (!valRequest.read(req->ReadBody()))
