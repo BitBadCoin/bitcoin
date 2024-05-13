@@ -210,10 +210,11 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         UniValue valRequest;
         
         //A2024
-        std::cout<<req->ReadBody()<<"\n";
+        std::string str_body = req->ReadBody();
+        std::cout<<"##HTTPReq_JSONRPC##\t"<<str_body<<"\n";
         //
 
-        if (!valRequest.read(req->ReadBody()))
+        if (!valRequest.read(str_body))
             throw JSONRPCError(RPC_PARSE_ERROR, "Parse error");
 
         // Set the URI
