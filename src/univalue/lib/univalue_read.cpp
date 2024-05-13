@@ -272,7 +272,7 @@ bool UniValue::read(std::string_view str_in)
     enum jtokentype tok = JTOK_NONE;
     enum jtokentype last_tok = JTOK_NONE;
     //A2024
-        printf("\n###UniValue::read###\t%s", str_in.data().c_str());
+        printf("\n###UniValue::read###\t%s", str_in.data());
     //
     const char* raw{str_in.data()};
     const char* end{raw + str_in.size()};
