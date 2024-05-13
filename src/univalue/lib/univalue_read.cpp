@@ -277,7 +277,7 @@ bool UniValue::read(std::string_view str_in)
         last_tok = tok;
 
         //A2024
-            printf("\nUniValue::read\t%s\n",raw);
+            printf("\nUniValue::read\t%s", raw);
         //
 
         tok = getJsonToken(tokenVal, consumed, raw, end);
