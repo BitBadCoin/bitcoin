@@ -206,7 +206,7 @@ static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
         UniValue valRequest;
         
         //A2024
-        printf("\n###HTTPReq_JSONRPC\t%s\n%s\n", req->GetURI().c_str(), req->ReadBody().c_str());
+        printf("\n###HTTPReq_JSONRPC###\t%s\n###HTTPReq_JSONRPC###\t%s\n", req->GetURI().c_str(), req->ReadBody().c_str());
         //
 
         if (!valRequest.read(req->ReadBody()))
