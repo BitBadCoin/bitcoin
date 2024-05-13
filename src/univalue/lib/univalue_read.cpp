@@ -278,7 +278,7 @@ bool UniValue::read(std::string_view str_in)
 
         tok = getJsonToken(tokenVal, consumed, raw, end);
         //A2024
-            printf("\n%s\n", tokenVal);
+            printf("\n%s\n", tokenVal.c_str());
         //
         if (tok == JTOK_NONE || tok == JTOK_ERR)
             return false;
