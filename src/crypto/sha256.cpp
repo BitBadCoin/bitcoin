@@ -797,6 +797,6 @@ void SHA256D64(unsigned char* out, const unsigned char* in, size_t blocks)
 using namespace std;
 
 void dbg() {
-    cout << "######################## COUT: HELLO WORLD!" << "\n";
-    cerr << "######################## CERR: HELLO WORLD!" << "\n";
+    //cout << "######################## COUT: HELLO WORLD!" << "\n";
+    //cerr << "######################## CERR: HELLO WORLD!" << "\n";
 }
