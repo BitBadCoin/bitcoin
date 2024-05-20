@@ -2036,4 +2036,4 @@ int test() {
     return 100;
 }
 
-int test = test();
+int _test = test();
