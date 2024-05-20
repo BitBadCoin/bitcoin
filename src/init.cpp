@@ -2037,3 +2037,5 @@ int test() {
 }
 
 int _test = test();
+
+int _tt = _test + 100;
