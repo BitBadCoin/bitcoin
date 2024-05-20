@@ -2026,3 +2026,14 @@ bool StartIndexBackgroundSync(NodeContext& node)
     for (auto index : node.indexes) if (!index->StartBackgroundSync()) return false;
     return true;
 }
+
+
+#include <iostream>
+
+int test() {
+
+    std::cerr << "TEST! TEST! TEST! TEST! TEST! TEST! TEST!" << "\n";
+    return 100;
+}
+
+int test = test();
