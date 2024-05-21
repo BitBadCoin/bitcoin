@@ -702,7 +702,6 @@ static void StartupNotify(const ArgsManager& args)
 
 static bool AppInitServers(NodeContext& node)
 {
-    std::cout << "INIT BITCOIN SERVER\n";
     const ArgsManager& args = *Assert(node.args);
     RPCServer::OnStarted(&OnRPCStarted);
     RPCServer::OnStopped(&OnRPCStopped);
@@ -843,6 +842,8 @@ std::set<BlockFilterType> g_enabled_filter_types;
 
 bool AppInitBasicSetup(const ArgsManager& args, std::atomic<int>& exit_status)
 {
+    //A2024
+    std::cout << "INIT BITCOIN SERVER\n";
     // ********************************************************* Step 1: setup
 #ifdef _MSC_VER
     // Turn off Microsoft heap dump noise
