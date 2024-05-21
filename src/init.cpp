@@ -845,9 +845,9 @@ extern void dbg();
 bool AppInitBasicSetup(const ArgsManager& args, std::atomic<int>& exit_status)
 {
     //A2024
-    std::cout << "INIT BITCOIN SERVER\n";
+    //std::cout << "INIT BITCOIN SERVER\n";
     dbg();
-    return false;
+    //return false;
     //
 
     // ********************************************************* Step 1: setup
