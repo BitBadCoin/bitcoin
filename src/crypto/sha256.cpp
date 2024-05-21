@@ -789,10 +789,14 @@ void SHA256D64(unsigned char* out, const unsigned char* in, size_t blocks)
 
 void dbg() {
     char data[] = {"const string str((const char*)data, len);"};
-    char hash[33];
+    char hash[32];
     CSHA256* test = new CSHA256();
     test->Write((const unsigned char *)&data[0], sizeof data);
     test->Finalize((unsigned char *)&hash[0]);
-    hash[32] = '\0';
-    std::cout << "SHA256 HASH is " << hash << "\n";
+    
+    for (int i = 0; i < 32; i++) {
+        std:cout << std:hex << hash[i];
+    }
+    std:cout << std:endl;
+
 }
