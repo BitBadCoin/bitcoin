@@ -699,13 +699,10 @@ CSHA256::CSHA256()
     sha256::Initialize(s);
 }
 
-//A2024
-void dbg(const unsigned char* data, size_t len);
-//
+
 
 CSHA256& CSHA256::Write(const unsigned char* data, size_t len)
 {
-    dbg(data, len);
     const unsigned char* end = data + len;
     size_t bufsize = bytes % 64;
     if (bufsize && bufsize + len >= 64) {
@@ -794,6 +791,7 @@ using namespace std;
 
 void dbg(const unsigned char* data, size_t len) {
     //const string str((const char*)data, len);
-    
-    cout << "SHA256 Data length: " << len << "\n";
+    //CSHA256 test();
+    //test.Write()
+    //cout << "SHA256 Data length: " << len << "\n";
 }
