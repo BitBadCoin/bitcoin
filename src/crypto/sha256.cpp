@@ -795,7 +795,7 @@ void dbg() {
     test->Finalize((unsigned char *)&hash[0]);
 
     for (int i = 0; i < 32; i++) {
-        std::cout << std::hex << hash[i];
+        std::cout << std::hex << (0xff & (unsigned int)hash[i]);
     }
     std::cout << std::endl;
 
