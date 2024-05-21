@@ -694,22 +694,18 @@ std::string SHA256AutoDetect(sha256_implementation::UseImplementation use_implem
 
 ////// SHA-256
 
-//A2024
-void dbg();
-//
-
 CSHA256::CSHA256()
 {
-    
-    //A2024
-    dbg();
-    //
-
     sha256::Initialize(s);
 }
 
+//A2024
+void dbg(const unsigned char* data, size_t len);
+//
+
 CSHA256& CSHA256::Write(const unsigned char* data, size_t len)
 {
+    dbg(data, len);
     const unsigned char* end = data + len;
     size_t bufsize = bytes % 64;
     if (bufsize && bufsize + len >= 64) {
@@ -796,7 +792,7 @@ void SHA256D64(unsigned char* out, const unsigned char* in, size_t blocks)
 
 using namespace std;
 
-void dbg() {
-    //cout << "######################## COUT: HELLO WORLD!" << "\n";
-    //cerr << "######################## CERR: HELLO WORLD!" << "\n";
+void dbg(const unsigned char* data, size_t len) {
+    const string str(data, len);
+    cout << srt << "\n";
 }
