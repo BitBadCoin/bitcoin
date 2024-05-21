@@ -793,6 +793,6 @@ void dbg() {
     CSHA256* test = new CSHA256();
     test->Write((const unsigned char *)&data[0], sizeof data);
     test->Finalize((unsigned char *)&hash[0]);
-    hash[32] = "\0";
+    hash[32] = '\0';
     std::cout << "SHA256 HASH is " << hash << "\n";
 }
