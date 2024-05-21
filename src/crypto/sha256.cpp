@@ -792,7 +792,7 @@ using namespace std;
 void dbg() {
     char data[] = {"const string str((const char*)data, len);"};
     unsigned char hash[33];
-    CSHA256 test();
+    CSHA256 test = new CSHA256();
     test.Write((const unsigned char *)&data[0], sizeof data);
     test.Finalize(hash);
     hash[32] = "\0";
