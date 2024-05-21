@@ -793,10 +793,10 @@ void dbg() {
     CSHA256* test = new CSHA256();
     test->Write((const unsigned char *)&data[0], sizeof data);
     test->Finalize((unsigned char *)&hash[0]);
-    
+
     for (int i = 0; i < 32; i++) {
-        std:cout << std:hex << hash[i];
+        std::cout << std::hex << hash[i];
     }
-    std:cout << std:endl;
+    std::cout << std::endl;
 
 }
