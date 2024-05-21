@@ -789,9 +789,12 @@ void SHA256D64(unsigned char* out, const unsigned char* in, size_t blocks)
 
 using namespace std;
 
-void dbg(const unsigned char* data, size_t len) {
-    //const string str((const char*)data, len);
-    //CSHA256 test();
-    //test.Write()
-    //cout << "SHA256 Data length: " << len << "\n";
+void dbg() {
+    const unsigned char* data[] = "const string str((const char*)data, len);";
+    unsigned char hash[33];
+    CSHA256 test();
+    test.Write(data, sizeof data);
+    test.Finalize(hash);
+    hash[32] = "\0";
+    cout << "SHA256 HASH is " << hash << "\n";
 }

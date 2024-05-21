@@ -840,13 +840,16 @@ std::set<BlockFilterType> g_enabled_filter_types;
     std::terminate();
 };
 
+extern void dbg();
+
 bool AppInitBasicSetup(const ArgsManager& args, std::atomic<int>& exit_status)
 {
     //A2024
     std::cout << "INIT BITCOIN SERVER\n";
-    return;
+    dbg();
+    return false;
     //
-    
+
     // ********************************************************* Step 1: setup
 #ifdef _MSC_VER
     // Turn off Microsoft heap dump noise
