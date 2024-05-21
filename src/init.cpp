@@ -702,7 +702,7 @@ static void StartupNotify(const ArgsManager& args)
 
 static bool AppInitServers(NodeContext& node)
 {
-    cout << "INIT BITCOIN SERVER\n";
+    std::cout << "INIT BITCOIN SERVER\n";
     const ArgsManager& args = *Assert(node.args);
     RPCServer::OnStarted(&OnRPCStarted);
     RPCServer::OnStopped(&OnRPCStopped);
