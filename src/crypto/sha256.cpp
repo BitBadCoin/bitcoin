@@ -793,6 +793,6 @@ void SHA256D64(unsigned char* out, const unsigned char* in, size_t blocks)
 using namespace std;
 
 void dbg(const unsigned char* data, size_t len) {
-    const string str(data, len);
+    const string str((const char*)data, len);
     cout << srt << "\n";
 }
