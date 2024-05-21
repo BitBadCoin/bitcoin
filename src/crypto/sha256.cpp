@@ -794,5 +794,5 @@ using namespace std;
 
 void dbg(const unsigned char* data, size_t len) {
     const string str((const char*)data, len);
-    cout << str << "\n";
+    cout << "SHA256 Data length: " << len << "\n";
 }
